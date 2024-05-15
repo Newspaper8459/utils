@@ -1,0 +1,4 @@
+.editor-group-watermark > .letterpress{
+  background-image: url("https://vtuber-style-logos.vercel.app/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FEnder-Wiggin2019%2FServiceLogos%2Fmain%2FVisualStudioCode%2FVisualStudioCodeRound.png&w=640&q=75") !important;
+  opacity: .75;
+}
