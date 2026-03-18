@@ -20,3 +20,4 @@ set shellslash
 hi Comment ctermfg=3
 syntax on
 set mouse=a
+set t_vb=
