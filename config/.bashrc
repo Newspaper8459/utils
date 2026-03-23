@@ -134,3 +134,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 eval "$(uv generate-shell-completion bash)"
 
+export PYTHONHASHSEED=0
+
