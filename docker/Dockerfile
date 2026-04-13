@@ -36,6 +36,7 @@ RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 WORKDIR /root
 RUN git clone https://github.com/Newspaper8459/utils.git
 RUN cp utils/config/.* /root 2>/dev/null || true
+RUN cp utils/docker/.bashrc /root
 
 RUN echo 'export TERM=xterm-256color' >> /root/.bashrc && \
     echo 'alias ls="ls --color=auto"' >> /root/.bashrc && \
