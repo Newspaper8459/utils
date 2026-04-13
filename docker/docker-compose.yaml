@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   dev:
-    image: gchr.io/newspaper8459/misaizu-image:latest
+    image: ghcr.io/newspaper8459/misaizu-image:latest
     shm_size: "32g"
     volumes:
       - .:/sandbox
