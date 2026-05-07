@@ -2,7 +2,9 @@ version: "3.9"
 services:
   dev:
     container_name: misaizu-dev
-    image: ghcr.io/newspaper8459/misaizu-image:latest
+    # image: ghcr.io/newspaper8459/misaizu-image:latest
+    image: misaizu-image
+    build: .
     shm_size: "192g"
     volumes:
       - .:/sandbox
@@ -21,7 +23,7 @@ services:
       - LC_ALL=C.UTF-8
       - NVIDIA_VISIBLE_DEVICES=all
       - NVIDIA_DRIVER_CAPABILITIES=compute,utility
-      - PATH=/root/.local/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+      # - PATH=/root/.local/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 
 volumes:
   uv-cache:

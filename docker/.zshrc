@@ -23,7 +23,6 @@ zstyle ':completion:*' menu select
 export PYTHONHASHSEED=0
 
 # --- uv ---
-. "$HOME/.local/bin/env"
 eval "$(uv generate-shell-completion zsh)"
 
 # --- エイリアス ---
