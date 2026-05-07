@@ -3,7 +3,7 @@ services:
   dev:
     container_name: misaizu-dev
     image: ghcr.io/newspaper8459/misaizu-image:latest
-    shm_size: "32g"
+    shm_size: "192g"
     volumes:
       - .:/sandbox
       - ./uv-cache:/root/.cache/uv
