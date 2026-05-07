@@ -1,0 +1,33 @@
+# プロンプトの右側に実行時間
+# [cmd_duration]
+# min_time = 2_000   # 2秒以上かかったコマンドの時間を表示
+
+# Gitブランチ
+[git_branch]
+symbol = " "
+style  = "bold purple"
+
+[package]
+symbol = "📦 "
+style  = "bold yellow"
+
+[nodejs]
+symbol = " "
+style  = "bold green"
+
+# Python仮想環境（.venvなど）
+[python]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+# ホスト名（サーバー接続時に便利）
+[hostname]
+ssh_only = true    # SSH接続時のみ表示
+format = "[@$hostname]($style) "
+style = "bold yellow"
+
