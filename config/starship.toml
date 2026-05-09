@@ -1,16 +1,5 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
-[aws]
-format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
-
-[azure]
-format = '\[[$symbol($subscription)]($style)\]'
-
 [c]
 format = '\[[$symbol($version(-$name))]($style)\]'
-
-[cmake]
-format = '\[[$symbol($version)]($style)\]'
 
 [cmd_duration]
 format = '\[[⏱ $duration]($style)\]'
@@ -20,12 +9,6 @@ format = '\[[$symbol \[$name\]]($style)\]'
 
 [cpp]
 format = '\[[$symbol($version(-$name))]($style)\]'
-
-[dart]
-format = '\[[$symbol($version)]($style)\]'
-
-[docker_context]
-format = '\[[$symbol$context]($style)\]'
 
 [gcloud]
 format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
@@ -45,17 +28,8 @@ format = '\[[$state ($progress_current/$progress_total)]($style)\]'
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style))'
 
-[golang]
-format = '\[[$symbol($version)]($style)\]'
-
 [hostname]
 format = '\[[$ssh_symbol($hostname)]($style)\] '
-
-[kubernetes]
-format = '\[[$symbol$context( \($namespace\))]($style)\]'
-
-[memory_usage]
-format = '\[$symbol[$ram( | $swap)]($style)\]'
 
 [nodejs]
 format = '\[[$symbol($version)]($style)\]'
