@@ -1,3 +1,5 @@
+# zmodload zsh/zprof
+
 # Sheldon
 eval "$(sheldon source)"
 
@@ -30,9 +32,22 @@ export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/zsh_completion" ] && \. "$NVM_DIR/zsh_completion"  # This loads nvm bash_completion
+
+# 仮の nvm コマンド
+nvm() {
+	# まず仮の nvm コマンドを unset
+	unset -f nvm
+
+	# nvm.sh をロード
+	# ここで本物の nvm コマンドが定義される
+	source "${NVM_DIR:-$HOME/.nvm}/nvm.sh"
+
+	# 仮の nvm コマンドに渡された引数を本物に受け渡す
+	nvm "$@"
+}
 
 # --- uv ---
 . "$HOME/.local/bin/env"
@@ -55,22 +70,4 @@ bindkey "^H" backward-kill-word
 
 WORDCHARS=''
 
-mount-dred() {
-  local MOUNTPOINT="$HOME/dred/"
-  local REMOTE="dred4:/home/dredvpn016/sandbox/"
-
-  if mountpoint -q "$MOUNTPOINT"; then
-    if ! timeout 3 ls "$MOUNTPOINT" &>/dev/null; then
-      echo "Stale mount detected, cleaning up..."
-      fusermount -uz "$MOUNTPOINT"
-    else
-      echo "Already mounted and alive: $MOUNTPOINT"
-      return 0
-    fi
-  fi
-
-  sshfs "$REMOTE" "$MOUNTPOINT" \
-    -o reconnect,ServerAliveInterval=15,ServerAliveCountMax=3
-  echo "Mounted $REMOTE -> $MOUNTPOINT"
-}
-
+# zprof
