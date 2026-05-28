@@ -18,6 +18,7 @@ RUN apt update && apt upgrade -y && apt install -y \
     llvm \
     libncurses5-dev \
     libncursesw5-dev \
+    libopencv-dev \
     xz-utils \
     tk-dev \
     libffi-dev \
