@@ -2,7 +2,7 @@ version: "3.9"
 services:
   dev:
     container_name: misaizu-dev
-    image: ghcr.io/newspaper8459/misaizu-image:1.4.0
+    image: ghcr.io/newspaper8459/misaizu-image:latest
     shm_size: "192g"
     volumes:
       - .:/sandbox

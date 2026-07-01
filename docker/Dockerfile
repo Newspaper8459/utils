@@ -32,6 +32,19 @@ RUN apt update && apt upgrade -y && apt install -y \
     tmux \
     gh \
     zsh \
+    libgl1 \
+    libglib2.0-0 \
+    libjpeg-dev \
+    libpng-dev \
+    pciutils \
+    net-tools \
+    iputils-ping \
+    dnsutils \
+    tree \
+    rsync \
+    ffmpeg \
+    locales \
+    fonts-noto-cjk \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -52,6 +65,11 @@ RUN mkdir ~/.config/sheldon -p
 
 RUN cp utils/config/starship.toml ~/.config/
 RUN cp utils/config/sheldon/plugins.toml ~/.config/sheldon
+
+RUN mkdir -p ~/.config/tmux/plugins/catppuccin
+RUN git clone -b v2.3.0 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
+RUN git clone https://github.com/tmux-plugins/tmux-prefix-highlight ~/.config/tmux/plugins/tmux-prefix-highlight
+RUN git clone https://github.com/tmux-plugins/tmux-cpu ~/.config/tmux/plugins/tmux-cpu
 
 SHELL ["/bin/zsh", "-c"]
 CMD ["/bin/zsh"]
